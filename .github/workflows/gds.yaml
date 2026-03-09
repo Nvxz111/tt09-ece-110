@@ -13,13 +13,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install Typst
-        run: |
-          wget https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz
-          tar -xf typst-x86_64-unknown-linux-musl.tar.xz
-          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
-          typst --version
-
       - name: Build GDS
         uses: TinyTapeout/tt-gds-action@tt09
         with:
@@ -48,7 +41,7 @@ jobs:
     needs: gds
     runs-on: ubuntu-24.04
     permissions:
-      pages: write
-      id-token: write
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
     steps:
       - uses: TinyTapeout/tt-gds-action/viewer@tt09
