@@ -17,7 +17,7 @@ module tt_um_lif (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uio_out [6;0] = 0;
+  assign uio_out [6:0] = 0;
   assign uio_oe  = 1;
 
   // List all unused inputs to prevent warnings

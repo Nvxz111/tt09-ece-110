@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:        
-  title:        A simple leaky inegrate and fire neuron for ECE 110       # Project title
+  title:        "A simple leaky integratew and fire neuron for ECE 110"       # Project title
   author:       "Nvxz111"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "it simulates a lif neuron"      # One line description of what your project does
