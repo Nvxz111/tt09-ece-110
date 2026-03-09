@@ -1,4 +1,4 @@
-`default_nettype 
+`default_nettype none
 
 module lif(
     input wire [7:0] current,
@@ -9,23 +9,23 @@ module lif(
 );
 
 wire [7:0] next_state;
-reg  [7:0] threshhold;
-
+reg  [7:0] threshold;
 
 always @(posedge clk) begin
     
     if (!reset_n) begin
         state <= 0;
-        threshhold <= 200;
-        end else begin
+        threshold <= 200;
+    end else begin
             state <= next_state;
-end
+    end
 
 end
+
 // next state logic
 assign next_state = current + (state >> 1);
 
 //spiking logic
-assign spike = (state >= threshhold);
+assign spike = (state >= threshold);
 
 endmodule
